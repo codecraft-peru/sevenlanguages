@@ -1,0 +1,149 @@
+= clojure
+
+* <<helloworld, Hello World>>
+* <<syntax, Syntax>>
+* <<collections, Collections>>
+* <<controlflow, Control flow>>
+** <<if, If>>
+** <<when, When>>
+** <<case, Case>>
+** <<cond, Cond>>
+* <<setup, Setup>>
+* <<resouces, Resources>>
+
+[[helloworld]]
+== Hello World
+[source, clojure]
+----
+;; hellow world
+user => (defn hello-world [x] (println (str "Hello " x))) 
+user => (hello-world "maraca")
+----
+
+[[syntax]]
+== Syntax
+[source, clojure]
+----
+;; everything goes between parentheses => ()
+;; function goes to the left and parameters to the right = >(fn args)
+user => (+ 1 2)
+user => (* 1 2)
+user => (- 1 2)
+user => (/ 1 2);; this type is called "ratio"
+
+user => (and (> 4 2) (< 2 3));; true
+user => (or (= 1 5) (>= 2 3));; false
+
+;;concatenate two strings
+user => (str "Hello " "maracas")
+
+;; but we can change the expression´s direction just for java/csharp developers XD
+;; With "thread-first ->"  apply a function from left to right, example: "Hello ".Concat("maracas")
+user => (-> "Hello " (str "maracas"))
+
+;; With "thread-last ->>" apply a function from right to left, example: "maracas".Concat("Hello ")
+user =>  (-> "Hello " (str "maracas"))
+
+(def t "");;global variable, the assigment is called "binding"
+(defn [x]);;define a fucntion
+----
+
+[[collections]]
+== Collection types
+[source, clojure]
+----
+user => '(1 2 3)     ; list
+user => [1 2 3]      ; vector
+user => #{1 2 3}     ; set
+user => {:a 1, :b 2} ; map
+----
+
+[[map]]
+== https://clojuredocs.org/clojure.core/map[Map => (map fn coll)] 
+[source, clojure]
+----
+;;full sintax
+user => (map (fn [x] (inc (val x))) {:a 1 :b 2 :c 3})
+
+;;anonymous functions
+user => (map #(val %) {:a 1 :b 2 :c 3})
+
+;;pass fucntions as parameters
+user => (map val {:a 1 :b 2 :c 3})
+----
+
+[[controlflow]]
+== Control flow
+[[if]]
+=== If
+[source, clojure]
+----
+;; by default supoort only one sentence to execute
+user => (if true 
+            (println "this is true maracas") 
+            (println "this is true maracas, again"))
+
+;; The third arg is used for else
+user => (if false 
+            (println "this is true maracas") 
+            (println "this isnt true"))
+
+;; if we want to execute more than one sentence we should use "do"
+user => (if true 
+            (do
+            (println "this is true maracas") 
+            (println "this is true maracas, again")))
+----
+[[when]]
+=== When
+[source, clojure]
+----
+;; use "When" when you only care about the case when condition is truthy
+user => (when true
+          (println "first sentence maraca")
+          (println "second sentence maraca"))
+----
+[[case]]
+=== Case
+[source, clojure]
+----
+;; Case compares the value with each condition with = and evaluates the expression in the matched branch.
+user => (defn case-test 
+              [x]
+              (case x
+                1 "x is 1"
+                2 "x is 2"
+                "X is not allowed maraca"))
+user => (case-test 1)
+user => (case-test 2)
+user => (case-test 3)
+----
+[[cond]]
+=== Cond
+[source, clojure]
+----
+;; similiar to case but want to write your own test case rather than =
+user => (defn cond-test 
+              [x]
+              (cond
+                (= x 1) "x is 1"
+                (and (>= x 2) (<= x 2)) "x is 2"
+                :else "X is not allowed maraca"))
+user => (cond-test 1)
+user => (cond-test 2)
+user => (cond-test 3)
+----
+for
+partial
+strategies
+
+[[setup]]
+== Setup
+- https://leiningen.org/[Leiningen]
+- https://www.oracle.com/java/technologies/javase-jdk8-downloads.html[jdk 8]
+
+- https://repl.it/languages/clojure[Online editor - alternative]
+
+[[resources]]
+Resources
+- https://kimh.github.io/clojure-by-example[Clojure by example]
