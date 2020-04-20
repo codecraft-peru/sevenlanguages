@@ -10,5 +10,5 @@
 - For the string “Hello, Ruby,” find the index of the word “Ruby.” [[solution](./ex-02.rb)]
 - Print your name ten times. [[solution](./ex-03.rb)] 
 - Print the string “This is sentence number 1,” where the number 1 changes from 1 to 10. [[solution](./ex-04.rb)]
-- Run a Ruby program from a file.
+- Run a Ruby program from a file. [[solution](http://rubylearning.com/satishtalim/first_ruby_program.html)]
 - **Bonus problem:** If you’re feeling the need for a little more, write a program that picks a random number. Let a player guess the number, telling the player whether the guess is too low or too high. [[solution](./ex-06.rb)]
