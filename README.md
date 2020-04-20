@@ -21,4 +21,4 @@ In Seven quarantines :)
 ----------\ex-0{ex-number}.{extension} 
 ```
 
-If any exercise solution needs more than one file you must create a folder, otherwise you can use a single file for solve it. The folder name has to use the structure **ex-0{ex-number}**
+If any exercise solution needs more than one file you must create a folder, otherwise you can use a single file for solve it. The folder name has to use the **ex-0{ex-number}** naming structure
