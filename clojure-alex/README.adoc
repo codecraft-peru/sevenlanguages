@@ -66,10 +66,10 @@ user => {:a 1, :b 2} ; map
 user => (map (fn [x] (inc (val x))) {:a 1 :b 2 :c 3})
 
 ;;anonymous functions
-user => (map #(val %) {:a 1 :b 2 :c 3})
+user => (map #(inc (val %)) {:a 1 :b 2 :c 3})
 
-;;pass fucntions as parameters
-user => (map val {:a 1 :b 2 :c 3})
+;;
+user => (map #(-> % val inc) {:a 1 :b 2 :c 3})
 ----
 
 [[controlflow]]
