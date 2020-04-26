@@ -39,10 +39,10 @@ user => (str "Hello " "maracas")
 
 ;; but we can change the expression´s direction just for java/csharp developers XD
 ;; With "thread-first ->"  apply a function from left to right, example: "Hello ".Concat("maracas")
-user => (-> "Hello " (str "maracas"))
+user => (-> "Hello " (str "maracas")) ;; (str "Hello " "maracas")
 
 ;; With "thread-last ->>" apply a function from right to left, example: "maracas".Concat("Hello ")
-user =>  (-> "Hello " (str "maracas"))
+user =>  (->> "Hello " (str "maracas")) ;; (str "maracas" "Hello ")
 
 (def t "");;global variable, the assigment is called "binding"
 (defn [x]);;define a fucntion
