@@ -38,10 +38,10 @@ user => (or (= 1 5) (>= 2 3));; false
 user => (str "Hello " "maracas")
 
 ;; but we can change the expression´s direction just for java/csharp developers XD
-;; With "thread-first ->"  apply a function from left to right, example: "Hello ".Concat("maracas")
+;; With "thread-first ->"  pass the parameter as first argument
 user => (-> "Hello " (str "maracas")) ;; (str "Hello " "maracas")
 
-;; With "thread-last ->>" apply a function from right to left, example: "maracas".Concat("Hello ")
+;; With "thread-last ->>" pass the parameter as last argument
 user =>  (->> "Hello " (str "maracas")) ;; (str "maracas" "Hello ")
 
 (def t "");;global variable, the assigment is called "binding"
